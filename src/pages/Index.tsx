@@ -1,31 +1,30 @@
 import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Trust from '@/components/Trust';
-import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
-import Certifications from '@/components/Certifications';
-import Testimonials from '@/components/Testimonials';
-import CTA from '@/components/CTA';
-import Footer from '@/components/Footer';
+import PorteCVHeader from '@/components/PorteCVHeader';
+import PorteCVHero from '@/components/PorteCVHero';
+import Objectives from '@/components/Objectives';
+import ProfessionalExperiences from '@/components/ProfessionalExperiences';
+import TechnicalSkills from '@/components/TechnicalSkills';
+import SoftSkills from '@/components/SoftSkills';
+import Languages from '@/components/Languages';
+import Projects from '@/components/Projects';
+import Documents from '@/components/Documents';
+import PorteCVFooter from '@/components/PorteCVFooter';
 
-/* PAGE PRINCIPALE - Clone du site ogoulajesse.pro
-   STRUCTURE DU SITE :
-   - Header : Navigation avec scroll effect
-   - Hero : Section d'accueil avec photo et statistiques  
-   - About : Présentation et expertise
-   - Trust : Logos des entreprises partenaires
-   - Services : Consulting Growth et Formation
-   - Portfolio : Projets réalisés (Africakard, École 241...)
-   - Certifications : Diplômes et certifications
-   - Testimonials : Témoignages clients
-   - CTA : Appel à l'action final
-   - Footer : Contact et liens
-
-   POUR PERSONNALISER : Modifiez chaque composant individuellement
-   POUR AJOUTER UNE SECTION : Importez et ajoutez le composant ici
-   POUR MODIFIER L'ORDRE : Réorganisez les composants ci-dessous
+/* PAGE PRINCIPALE - PorteCV Portfolio Étudiant
+   Portfolio étudiant professionnel pour jobs de vacances, stages et alternances
+   Avec système de thème clair/sombre et multi-langue FR/EN
+   
+   STRUCTURE :
+   - Header : Navigation avec theme toggle et language switcher
+   - Hero : Photo profil + CTA + Stats rapides
+   - Objectives : Objectifs chiffrés avec KPIs et timeline
+   - ProfessionalExperiences : Cartes d'expérience avec photos et résultats
+   - TechnicalSkills : Compétences techniques avec barres de progression
+   - SoftSkills : Compétences comportementales avec visualisation
+   - Languages : Langues et outils de communication
+   - Projects : Projets académiques avec métriques
+   - Documents : CV, certifications, lettres avec QR code
+   - Footer : Contact et réseaux sociaux
 */
 
 const Index = () => {
@@ -59,39 +58,37 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* NAVIGATION PRINCIPALE */}
-      <Header />
+    <div className="min-h-screen bg-background relative">
+      {/* Animation de fond PorteCV */}
+      <div className="portecv-background">
+        <div className="portecv-text-pattern" style={{ top: '10%', left: '0' }}>
+          PorteCV PorteCV PorteCV PorteCV
+        </div>
+        <div className="portecv-text-pattern" style={{ top: '40%', left: '20%' }}>
+          PorteCV PorteCV PorteCV PorteCV
+        </div>
+        <div className="portecv-text-pattern" style={{ top: '70%', left: '10%' }}>
+          PorteCV PorteCV PorteCV PorteCV
+        </div>
+      </div>
+
+      {/* NAVIGATION */}
+      <PorteCVHeader />
       
-      {/* SECTIONS DU SITE - POUR MODIFIER L'ORDRE : Réorganisez ces composants */}
-      <main>
-        {/* Section d'accueil avec photo et CTA */}
-        <Hero />
-        
-        {/* Présentation personnelle et parcours */}
-        <About />
-        
-        {/* Entreprises partenaires */}
-        <Trust />
-        
-        {/* Services proposés */}
-        <Services />
-        
-        {/* Portfolio de projets */}
-        <Portfolio />
-        
-        {/* Certifications et formations */}
-        <Certifications />
-        
-        {/* Témoignages clients */}
-        <Testimonials />
-        
-        {/* Appel à l'action final */}
-        <CTA />
+      {/* CONTENU PRINCIPAL */}
+      <main className="relative z-10">
+        <PorteCVHero />
+        <Objectives />
+        <ProfessionalExperiences />
+        <TechnicalSkills />
+        <SoftSkills />
+        <Languages />
+        <Projects />
+        <Documents />
       </main>
       
-      {/* PIED DE PAGE */}
-      <Footer />
+      {/* FOOTER */}
+      <PorteCVFooter />
     </div>
   );
 };
