@@ -41,7 +41,8 @@ const translations = {
     
     // Compétences
     technicalSkillsTitle: 'Compétences Techniques',
-    softSkillsTitle: 'Compétences Comportementales',
+    softSkillsTitle: 'Profil de Compétences Comportementales',
+    softSkillsSubtitle: 'Les qualités qui font la différence en situation professionnelle',
     languagesTitle: 'Langues & Outils',
     
     // Soft Skills
@@ -98,7 +99,8 @@ const translations = {
     
     // Compétences
     technicalSkillsTitle: 'Technical Skills',
-    softSkillsTitle: 'Soft Skills',
+    softSkillsTitle: 'Behavioral Skills Profile',
+    softSkillsSubtitle: 'The qualities that make the difference in professional situations',
     languagesTitle: 'Languages & Tools',
     
     // Soft Skills

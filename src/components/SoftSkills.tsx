@@ -23,7 +23,7 @@ const SoftSkills = () => {
             <h2 className="section-title">{t('softSkillsTitle')}</h2>
           </div>
           <p className="section-subtitle">
-            Les compétences comportementales qui me définissent
+            {t('softSkillsSubtitle')}
           </p>
 
           <div className="max-w-5xl mx-auto">
