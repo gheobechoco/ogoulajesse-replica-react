@@ -146,16 +146,16 @@
     animation: slide-pattern 60s linear infinite;
   }
 
-  /* Light mode - couleur claire */
+  /* Light mode - gris ultra-clair pour contraste subtil */
   .portecv-text-pattern {
-    opacity: 0.02;
-    color: hsl(var(--primary));
+    opacity: 0.08;
+    color: #e8e8e8;
   }
 
-  /* Dark mode - couleur sombre pour visibilité */
+  /* Dark mode - gris foncé pour contraste discret */
   .dark .portecv-text-pattern {
-    opacity: 0.03;
-    color: hsl(220 20% 25%);
+    opacity: 0.08;
+    color: #2a2a2a;
   }
 
   @keyframes slide-pattern {
