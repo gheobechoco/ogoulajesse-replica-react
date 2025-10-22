@@ -1,9 +1,9 @@
-import { Mail, Linkedin, Github, Twitter, MapPin, Phone } from 'lucide-react';
+import { Mail, Linkedin, MessageCircle, Twitter, MapPin, Phone } from 'lucide-react';
 
 const PorteCVFooter = () => {
   const socials = [
     { icon: Linkedin, url: '#', label: 'LinkedIn' },
-    { icon: Github, url: '#', label: 'GitHub' },
+    { icon: MessageCircle, url: 'https://wa.me/24177657635', label: 'WhatsApp' },
     { icon: Twitter, url: '#', label: 'Twitter' },
   ];
 
@@ -19,29 +19,51 @@ const PorteCVFooter = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Je suis disponible pour des opportunités de stage, jobs étudiants et alternances
             </p>
-            <button className="btn-primary flex items-center gap-2 mx-auto icon-hover">
+            <a 
+              href="mailto:moueletgeoff@gmail.com"
+              className="btn-primary flex items-center gap-2 mx-auto icon-hover"
+            >
               <Mail className="w-5 h-5" />
-              etudiant@portecv.fr
-            </button>
+              moueletgeoff@gmail.com
+            </a>
           </div>
 
           {/* Contact Info */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
+            <a 
+              href="mailto:moueletgeoff@gmail.com"
+              className="text-center group cursor-pointer"
+            >
               <Mail className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
               <h3 className="font-semibold text-foreground mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground">etudiant@portecv.fr</p>
-            </div>
-            <div className="text-center">
+              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                moueletgeoff@gmail.com
+              </p>
+            </a>
+            <a 
+              href="https://wa.me/24177657635"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center group cursor-pointer"
+            >
               <Phone className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
-              <h3 className="font-semibold text-foreground mb-2">Téléphone</h3>
-              <p className="text-sm text-muted-foreground">+33 6 12 34 56 78</p>
-            </div>
-            <div className="text-center">
+              <h3 className="font-semibold text-foreground mb-2">WhatsApp</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                +241 077 65 76 35
+              </p>
+            </a>
+            <a 
+              href="https://www.google.com/maps/place/Port-Gentil,+Gabon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center group cursor-pointer"
+            >
               <MapPin className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
               <h3 className="font-semibold text-foreground mb-2">Localisation</h3>
-              <p className="text-sm text-muted-foreground">Paris, France</p>
-            </div>
+              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                Port-Gentil, Gabon
+              </p>
+            </a>
           </div>
 
           {/* Social Links */}

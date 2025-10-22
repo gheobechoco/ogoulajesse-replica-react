@@ -142,10 +142,20 @@
     position: absolute;
     font-size: 120px;
     font-weight: 800;
-    opacity: 0.02;
-    color: hsl(var(--primary));
     white-space: nowrap;
     animation: slide-pattern 60s linear infinite;
+  }
+
+  /* Light mode - couleur claire */
+  .portecv-text-pattern {
+    opacity: 0.02;
+    color: hsl(var(--primary));
+  }
+
+  /* Dark mode - couleur sombre pour visibilité */
+  .dark .portecv-text-pattern {
+    opacity: 0.03;
+    color: hsl(220 20% 25%);
   }
 
   @keyframes slide-pattern {

@@ -41,7 +41,7 @@ const translations = {
     
     // Compétences
     technicalSkillsTitle: 'Compétences Techniques',
-    softSkillsTitle: 'Profil de Compétences Comportementales',
+    softSkillsTitle: 'Profil de compétences comportementales',
     softSkillsSubtitle: 'Les qualités qui font la différence en situation professionnelle',
     languagesTitle: 'Langues & Outils',
     
