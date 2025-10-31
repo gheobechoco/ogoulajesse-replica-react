@@ -1,5 +1,6 @@
 import { Calculator, Megaphone, Laptop, Users, Scale, Globe, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Progress } from './ui/progress';
 
 const TechnicalSkills = () => {
   const { t } = useLanguage();
@@ -11,9 +12,9 @@ const TechnicalSkills = () => {
       icon: Calculator,
       color: 'text-primary',
       skills: [
-        'Maîtrise des principes de la comptabilité générale',
-        'Capacité à enregistrer et analyser les opérations financières',
-        'Compréhension du fonctionnement des états financiers',
+        { name: 'Maîtrise des principes de la comptabilité générale', level: 85 },
+        { name: 'Capacité à enregistrer et analyser les opérations financières', level: 80 },
+        { name: 'Compréhension du fonctionnement des états financiers', level: 75 },
       ],
       matiere: 'Comptabilité générale',
     },
@@ -23,9 +24,9 @@ const TechnicalSkills = () => {
       icon: Megaphone,
       color: 'text-success',
       skills: [
-        'Connaissance des fondamentaux du marketing',
-        'Capacité à comprendre les besoins du consommateur et la segmentation du marché',
-        'Aptitude à concevoir des stratégies de communication et de vente',
+        { name: 'Connaissance des fondamentaux du marketing', level: 90 },
+        { name: 'Capacité à comprendre les besoins du consommateur et la segmentation du marché', level: 85 },
+        { name: 'Aptitude à concevoir des stratégies de communication et de vente', level: 80 },
       ],
       matiere: 'Marketing fondamental',
     },
@@ -35,9 +36,9 @@ const TechnicalSkills = () => {
       icon: Laptop,
       color: 'text-primary',
       skills: [
-        'Utilisation des logiciels de bureautique et de gestion',
-        'Gestion et traitement de données informatisées',
-        'Initiation aux systèmes d\'information de gestion',
+        { name: 'Utilisation des logiciels de bureautique et de gestion', level: 95 },
+        { name: 'Gestion et traitement de données informatisées', level: 85 },
+        { name: 'Initiation aux systèmes d\'information de gestion', level: 75 },
       ],
       matiere: 'Informatique de gestion',
     },
@@ -47,9 +48,9 @@ const TechnicalSkills = () => {
       icon: Users,
       color: 'text-success',
       skills: [
-        'Compréhension des bases du management et du leadership',
-        'Organisation et répartition du travail',
-        'Suivi de la performance et motivation du personnel',
+        { name: 'Compréhension des bases du management et du leadership', level: 80 },
+        { name: 'Organisation et répartition du travail', level: 85 },
+        { name: 'Suivi de la performance et motivation du personnel', level: 75 },
       ],
       matiere: 'Introduction au management',
     },
@@ -59,9 +60,9 @@ const TechnicalSkills = () => {
       icon: Scale,
       color: 'text-primary',
       skills: [
-        'Connaissance des notions fondamentales du droit civil et commercial',
-        'Capacité à analyser l\'environnement économique d\'une entreprise',
-        'Compréhension des règles juridiques encadrant les activités économiques',
+        { name: 'Connaissance des notions fondamentales du droit civil et commercial', level: 80 },
+        { name: 'Capacité à analyser l\'environnement économique d\'une entreprise', level: 85 },
+        { name: 'Compréhension des règles juridiques encadrant les activités économiques', level: 78 },
       ],
       matiere: 'Droit civil / Droit des affaires / Analyse économique',
     },
@@ -71,9 +72,9 @@ const TechnicalSkills = () => {
       icon: Globe,
       color: 'text-success',
       skills: [
-        'Expression écrite et orale en contexte professionnel',
-        'Communication interculturelle et terminologie économique',
-        'Capacité à rédiger et comprendre des documents professionnels multilingues',
+        { name: 'Expression écrite et orale en contexte professionnel', level: 90 },
+        { name: 'Communication interculturelle et terminologie économique', level: 85 },
+        { name: 'Capacité à rédiger et comprendre des documents professionnels multilingues', level: 80 },
       ],
       matiere: 'Français / Anglais / Espagnol des affaires',
     },
@@ -83,9 +84,9 @@ const TechnicalSkills = () => {
       icon: TrendingUp,
       color: 'text-primary',
       skills: [
-        'Maîtrise des outils mathématiques appliqués à la gestion',
-        'Capacité à interpréter des données statistiques',
-        'Aptitude à la modélisation et à la prise de décision basée sur les chiffres',
+        { name: 'Maîtrise des outils mathématiques appliqués à la gestion', level: 82 },
+        { name: 'Capacité à interpréter des données statistiques', level: 80 },
+        { name: 'Aptitude à la modélisation et à la prise de décision basée sur les chiffres', level: 78 },
       ],
       matiere: 'Mathématiques générales / Statistiques descriptives',
     },
@@ -112,16 +113,17 @@ const TechnicalSkills = () => {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">{category.category}</h3>
                   
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-4 mb-4">
                     <p className="text-sm font-semibold text-primary">Sous-compétences :</p>
-                    <ul className="space-y-2">
-                      {category.skills.map((skill, i) => (
-                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span>{skill}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {category.skills.map((skill, i) => (
+                      <div key={i}>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                          <span className="text-sm text-primary font-bold">{skill.level}%</span>
+                        </div>
+                        <Progress value={skill.level} className="h-2" />
+                      </div>
+                    ))}
                   </div>
                   
                   <div className="pt-3 border-t border-border">
