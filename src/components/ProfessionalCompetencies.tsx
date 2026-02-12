@@ -1,7 +1,10 @@
-import { Briefcase, User, Clock, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
+import { Briefcase, User, Clock, TrendingUp, Filter } from 'lucide-react';
 import { Progress } from './ui/progress';
 
 const ProfessionalCompetencies = () => {
+  const [filtre, setFiltre] = useState('Tous les domaines');
+
   const profil = {
     statut: 'Étudiant – Commerce',
     disponibilite: 'Stage / Contrat junior',
@@ -13,7 +16,12 @@ const ProfessionalCompetencies = () => {
     { nom: 'Commerce & Vente', pourcentage: 54, competences: 5 },
     { nom: 'Logistique & Distribution', pourcentage: 47, competences: 3 },
     { nom: 'Marketing & Communication', pourcentage: 65, competences: 3 },
+    { nom: 'Informatique & Numérique', pourcentage: 79, competences: 3 },
+    { nom: 'Droit & Gestion', pourcentage: 55, competences: 2 },
   ];
+
+  const filtres = ['Tous les domaines', ...domaines.map(d => d.nom)];
+  const domainesFiltres = filtre === 'Tous les domaines' ? domaines : domaines.filter(d => d.nom === filtre);
 
   return (
     <section className="section-spacing">
@@ -60,10 +68,24 @@ const ProfessionalCompetencies = () => {
               </div>
             </div>
 
+            {/* Filtre */}
+            <div className="mb-6 flex items-center gap-3">
+              <Filter className="w-5 h-5 text-primary" />
+              <select
+                value={filtre}
+                onChange={(e) => setFiltre(e.target.value)}
+                className="bg-card border border-border rounded-lg px-4 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+              >
+                {filtres.map((f) => (
+                  <option key={f} value={f}>{f}</option>
+                ))}
+              </select>
+            </div>
+
             {/* Domaines */}
             <div className="space-y-6">
-              {domaines.map((domaine, index) => (
-                <div key={index} className="portecv-card">
+              {domainesFiltres.map((domaine, index) => (
+                <div key={index} className="portecv-card hover:scale-[1.01] transition-transform duration-300">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-lg font-bold text-foreground">{domaine.nom}</h3>
                     <span className="text-sm font-medium text-muted-foreground">{domaine.competences} compétences</span>
