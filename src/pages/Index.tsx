@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import PorteCVHeader from '@/components/PorteCVHeader';
 import PorteCVHero from '@/components/PorteCVHero';
-import Objectives from '@/components/Objectives';
-import VideoPresentation from '@/components/VideoPresentation';
 import LanguageSkills from '@/components/LanguageSkills';
+import BehavioralSkills from '@/components/BehavioralSkills';
 import ProfessionalCompetencies from '@/components/ProfessionalCompetencies';
 import TechnicalSkills from '@/components/TechnicalSkills';
-import SoftSkills from '@/components/SoftSkills';
 import ProfessionalExperiences from '@/components/ProfessionalExperiences';
 import Documents from '@/components/Documents';
 import ContactCTA from '@/components/ContactCTA';
@@ -45,12 +43,10 @@ const Index = () => {
 
       <main className="relative z-10">
         <PorteCVHero />
-        <Objectives />
-        <VideoPresentation />
         <LanguageSkills />
+        <BehavioralSkills />
         <ProfessionalCompetencies />
         <TechnicalSkills />
-        <SoftSkills />
         <ProfessionalExperiences />
         <Documents />
         <ContactCTA />
