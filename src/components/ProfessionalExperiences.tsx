@@ -1,82 +1,35 @@
 import { Briefcase, MapPin, Calendar, TrendingUp } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProfessionalExperiences = () => {
-  const { t } = useLanguage();
-
   const experiences = [
     {
-      title: 'Stagiaire Logistique - Gabon Oil Company',
-      period: 'Juillet 2024 - Septembre 2024',
-      location: 'Port-Gentil, Gabon',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
-      responsibilities: [
-        'Gestion des stocks de matériel parapétrolier',
-        'Coordination des livraisons sur sites offshore (15+ navettes/semaine)',
-        'Suivi documentaire des équipements sensibles',
-        'Reporting quotidien auprès du superviseur logistique',
-      ],
-      results: [
-        { metric: '-12%', label: 'Délais de livraison' },
-        { metric: '98%', label: 'Taux de conformité' },
-        { metric: '850K', label: 'FCFA économisés' },
-      ],
-      skills: ['Logistique', 'Gestion stocks', 'Coordination', 'Rigueur'],
+      entreprise: 'Restaurant Chez Maman Gabonaise',
+      poste: 'Service & Accueil Client',
+      periode: '2022 - 2023',
+      lieu: 'Libreville, Gabon',
+      realisations: ['+15% de pourboires', 'Gestion de flux clients', 'Service client premium', 'Travail en équipe coordonnée'],
     },
     {
-      title: 'Assistant Junior-Entreprise - JE Gabon Business',
-      period: 'Janvier 2024 - Juin 2024',
-      location: 'Libreville, Gabon',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop',
-      responsibilities: [
-        'Réalisation d\'études de marché pour PME locales',
-        'Accompagnement de 8 entreprises gabonaises',
-        'Développement d\'outils de gestion commerciale',
-        'Animation d\'ateliers de formation (40+ participants)',
-      ],
-      results: [
-        { metric: '8', label: 'Projets réalisés' },
-        { metric: '4.6/5', label: 'Satisfaction clients' },
-        { metric: '+28%', label: 'CA moyen clients' },
-      ],
-      skills: ['Conseil', 'Analyse', 'Communication', 'Gestion de projet'],
+      entreprise: 'CECACabonDistribution',
+      poste: 'Assistant Commercial & Logistique',
+      periode: 'Juin - Août 2023',
+      lieu: 'Libreville, Gabon',
+      realisations: ['Prospection terrain réussie', 'Gestion des stocks', 'Prospection commerciale', 'Coordination logistique'],
     },
     {
-      title: 'Assistant Administratif - Caisse Nationale d\'Assurance Maladie',
-      period: 'Juin 2023 - Août 2023',
-      location: 'Libreville, Gabon',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
-      responsibilities: [
-        'Traitement des dossiers d\'adhésion (120+ dossiers/mois)',
-        'Accueil et renseignement des assurés',
-        'Archivage et numérisation des documents',
-        'Support à l\'équipe administrative',
-      ],
-      results: [
-        { metric: '+35%', label: 'Productivité équipe' },
-        { metric: '650+', label: 'Dossiers traités' },
-        { metric: '92%', label: 'Satisfaction usagers' },
-      ],
-      skills: ['Administration', 'Organisation', 'Service public', 'Informatique'],
+      entreprise: 'Événementiel Sup de Com',
+      poste: 'Coordinateur Événements',
+      periode: '2024',
+      lieu: 'Libreville, Gabon',
+      realisations: ['3 événements organisés', 'Organisation événementielle', 'Communication visuelle', 'Gestion de projet'],
     },
-    {
-      title: 'Bénévole - Association Gabon Vert',
-      period: 'Mars 2023 - Décembre 2023',
-      location: 'Libreville, Gabon',
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop',
-      responsibilities: [
-        'Organisation de campagnes de sensibilisation environnementale',
-        'Coordination d\'équipes de volontaires (25+ personnes)',
-        'Gestion des réseaux sociaux de l\'association',
-        'Collecte de fonds pour projets écologiques',
-      ],
-      results: [
-        { metric: '1.2M', label: 'FCFA collectés' },
-        { metric: '450+', label: 'Participants mobilisés' },
-        { metric: '5', label: 'Campagnes menées' },
-      ],
-      skills: ['Engagement', 'Mobilisation', 'Communication digitale', 'Événementiel'],
-    },
+  ];
+
+  const niveaux = [
+    { label: 'Avancé', value: '90%+', color: 'bg-success' },
+    { label: 'Autonome', value: '75-89%', color: 'bg-primary' },
+    { label: 'Opérationnel', value: '60-74%', color: 'bg-primary/60' },
+    { label: 'Certifié', value: '100%', color: 'bg-success' },
   ];
 
   return (
@@ -85,85 +38,70 @@ const ProfessionalExperiences = () => {
         <div className="fade-in-up">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Briefcase className="w-10 h-10 text-primary icon-pulse" />
-            <h2 className="section-title">{t('experiencesTitle')}</h2>
+            <h2 className="section-title">Expériences Professionnelles Acquises</h2>
           </div>
-          <p className="section-subtitle">{t('experiencesSubtitle')}</p>
+          <p className="section-subtitle">Compétences démontrées dans des contextes réels</p>
 
-          <div className="max-w-5xl mx-auto space-y-8">
+          {/* Timeline */}
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border transform md:-translate-x-px"></div>
+
             {experiences.map((exp, index) => (
-              <div key={index} className="portecv-card group">
-                <div className="grid md:grid-cols-5 gap-6">
-                  {/* Image */}
-                  <div className="md:col-span-2">
-                    <div className="relative h-48 md:h-full rounded-lg overflow-hidden">
-                      <img
-                        src={exp.image}
-                        alt={exp.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-                    </div>
-                  </div>
+              <div key={index} className={`relative flex items-start mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                {/* Timeline dot */}
+                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 mt-6 z-10 border-4 border-background"></div>
 
-                  {/* Content */}
-                  <div className="md:col-span-3">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">{exp.title}</h3>
-                    
-                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        {exp.period}
+                {/* Card */}
+                <div className={`ml-16 md:ml-0 md:w-[45%] ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                  <div className="portecv-card">
+                    <h3 className="text-xl font-bold text-foreground mb-1">{exp.entreprise}</h3>
+                    <p className="text-primary font-semibold mb-2">{exp.poste}</p>
+
+                    <div className="flex flex-wrap gap-3 mb-4 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {exp.periode}
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        {exp.location}
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        {exp.lieu}
                       </div>
                     </div>
 
-                    {/* Responsabilités */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-primary mb-2 flex items-center gap-2">
-                        <Briefcase className="w-4 h-4" />
-                        {t('responsibilities')}
-                      </h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        {exp.responsibilities.map((resp, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1">•</span>
-                            <span>{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Résultats */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-success mb-2 flex items-center gap-2">
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold text-success flex items-center gap-1">
                         <TrendingUp className="w-4 h-4" />
-                        {t('results')}
+                        Réalisations
                       </h4>
-                      <div className="grid grid-cols-3 gap-3">
-                        {exp.results.map((result, i) => (
-                          <div key={i} className="bg-success/10 rounded-lg p-2 text-center">
-                            <div className="text-lg font-bold text-success">{result.metric}</div>
-                            <div className="text-xs text-muted-foreground">{result.label}</div>
-                          </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.realisations.map((r, i) => (
+                          <span key={i} className="badge-skill text-xs">{r}</span>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Compétences */}
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, i) => (
-                        <span key={i} className="badge-skill text-xs">
-                          {skill}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Niveaux légende */}
+          <div className="max-w-3xl mx-auto mt-8">
+            <div className="portecv-card">
+              <h4 className="text-sm font-semibold text-foreground mb-3">Indicateurs de niveaux</h4>
+              <div className="flex flex-wrap gap-4">
+                {niveaux.map((n, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <div className={`w-3 h-3 rounded-full ${n.color}`}></div>
+                    <span className="text-xs text-muted-foreground">{n.label}: {n.value}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 italic">
+                Les scores sont calculés automatiquement à partir des preuves fournies : Formation (20%) + Dynamique/Droits/Stratégie (35%) + Certification (25%) + Environnement (20%)
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,95 +1,96 @@
-import { Mail, Linkedin, MessageCircle, Twitter, MapPin, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const PorteCVFooter = () => {
-  const socials = [
-    { icon: Linkedin, url: '#', label: 'LinkedIn' },
-    { icon: MessageCircle, url: 'https://wa.me/24177657635', label: 'WhatsApp' },
-    { icon: Twitter, url: '#', label: 'Twitter' },
-  ];
+  const navigation = ['Présentation', 'Compétences', 'Documents', 'Rendez-vous'];
+  const liensRapides = ['Présentation Vidéo', 'Compétences Linguistiques', 'Mes Compétences', 'Prendre Rendez-vous'];
 
   return (
-    <footer id="contact" className="bg-card border-t border-border section-spacing">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Contact CTA */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Travaillons ensemble ! 🚀
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Je suis disponible pour des opportunités de stage, jobs étudiants et alternances
-            </p>
-            <a 
-              href="mailto:moueletgeoff@gmail.com"
-              className="btn-primary flex items-center gap-2 mx-auto icon-hover"
-            >
-              <Mail className="w-5 h-5" />
-              moueletgeoff@gmail.com
-            </a>
-          </div>
+    <footer className="bg-card border-t border-border section-spacing relative overflow-hidden">
+      {/* Background animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-20 -right-20 w-60 h-60 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-success/5 rounded-full blur-3xl"></div>
+      </div>
 
-          {/* Contact Info */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <a 
-              href="mailto:moueletgeoff@gmail.com"
-              className="text-center group cursor-pointer"
-            >
-              <Mail className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
-              <h3 className="font-semibold text-foreground mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                moueletgeoff@gmail.com
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            {/* Brand */}
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold">PC</span>
+                </div>
+                <span className="text-lg font-bold text-primary">PortCV Étudiant</span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">RILOGUE BARRE Innivha</h3>
+              <p className="text-sm text-muted-foreground">
+                Étudiant passionné transformant mes compétences en opportunités professionnelles
               </p>
-            </a>
-            <a 
-              href="https://wa.me/24177657635"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center group cursor-pointer"
-            >
-              <Phone className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
-              <h3 className="font-semibold text-foreground mb-2">WhatsApp</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                +241 077 65 76 35
-              </p>
-            </a>
-            <a 
-              href="https://www.google.com/maps/place/Port-Gentil,+Gabon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center group cursor-pointer"
-            >
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-3 icon-hover" />
-              <h3 className="font-semibold text-foreground mb-2">Localisation</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                Port-Gentil, Gabon
-              </p>
-            </a>
-          </div>
+            </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center gap-4 mb-8">
-            {socials.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.label}
-                  href={social.url}
-                  className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 icon-hover group"
-                  aria-label={social.label}
-                >
-                  <Icon className="w-5 h-5 text-foreground group-hover:text-primary-foreground transition-colors" />
-                </a>
-              );
-            })}
+            {/* Navigation */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
+              <ul className="space-y-2">
+                {navigation.map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Liens rapides */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Liens Rapides</h4>
+              <ul className="space-y-2">
+                {liensRapides.map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="mailto:moueletgeoff@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <Mail className="w-4 h-4" />
+                    moueletgeoff@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/24177657635" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <Phone className="w-4 h-4" />
+                    +241 077 65 76 35
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/place/Port-Gentil,+Gabon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    Port-Gentil, GABON
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Copyright */}
-          <div className="text-center pt-8 border-t border-border">
+          <div className="pt-8 border-t border-border text-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} PorteCV - Portfolio Étudiant Professionnel
+              © {new Date().getFullYear()} RILOGUE BARRE Innivha. Tous droits réservés.
             </p>
             <p className="text-xs text-muted-foreground mt-2">
-              Créé avec ❤️ pour maximiser vos opportunités professionnelles
+              Développé par Geoff MOUELET
             </p>
           </div>
         </div>
