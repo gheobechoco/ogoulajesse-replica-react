@@ -6,6 +6,7 @@ import BehavioralSkills from '@/components/BehavioralSkills';
 import ProfessionalCompetencies from '@/components/ProfessionalCompetencies';
 import TechnicalSkills from '@/components/TechnicalSkills';
 import ProfessionalExperiences from '@/components/ProfessionalExperiences';
+import DomainCompetencies from '@/components/DomainCompetencies';
 import Documents from '@/components/Documents';
 import ContactCTA from '@/components/ContactCTA';
 import PorteCVFooter from '@/components/PorteCVFooter';
@@ -48,6 +49,7 @@ const Index = () => {
         <ProfessionalCompetencies />
         <TechnicalSkills />
         <ProfessionalExperiences />
+        <DomainCompetencies />
         <Documents />
         <ContactCTA />
       </main>
