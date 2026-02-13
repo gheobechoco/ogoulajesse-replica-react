@@ -9,7 +9,6 @@ const ProfessionalExperiences = () => {
       lieu: 'Libreville, Gabon',
       domaine: 'Commerce',
       realisations: ['+15% de pourboires', 'Gestion de flux clients', 'Service client premium', 'Travail en équipe coordonnée'],
-      bgImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
     },
     {
       entreprise: 'CECACabonDistribution',
@@ -18,7 +17,6 @@ const ProfessionalExperiences = () => {
       lieu: 'Libreville, Gabon',
       domaine: 'Logistique',
       realisations: ['Prospection terrain réussie', 'Gestion des stocks', 'Prospection commerciale', 'Coordination logistique'],
-      bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
     },
     {
       entreprise: 'Événementiel Sup de Com',
@@ -27,14 +25,13 @@ const ProfessionalExperiences = () => {
       lieu: 'Libreville, Gabon',
       domaine: 'Marketing',
       realisations: ['3 événements organisés', 'Organisation événementielle', 'Communication visuelle', 'Gestion de projet'],
-      bgImage: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop',
     },
   ];
 
   const niveaux = [
-    { label: 'Avancé', value: '90%+', color: 'bg-success' },
-    { label: 'Autonome', value: '75-89%', color: 'bg-primary' },
-    { label: 'Opérationnel', value: '60-74%', color: 'bg-primary/60' },
+    { label: 'Avancé', value: '90%+', color: 'bg-primary' },
+    { label: 'Autonome', value: '75-89%', color: 'bg-primary/70' },
+    { label: 'Opérationnel', value: '60-74%', color: 'bg-primary/40' },
     { label: 'Certifié', value: '100%', color: 'bg-success' },
   ];
 
@@ -48,54 +45,54 @@ const ProfessionalExperiences = () => {
           </div>
           <p className="section-subtitle">Compétences démontrées dans des contextes réels</p>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          {/* Timeline */}
+          <div className="max-w-3xl mx-auto relative">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform -translate-x-1/2"></div>
+
             {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative rounded-[20px] overflow-hidden shadow-xl group hover:scale-[1.03] transition-transform duration-300"
-              >
-                {/* Background image */}
-                <div className="absolute inset-0">
-                  <img src={exp.bgImage} alt={exp.entreprise} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40"></div>
-                </div>
+              <div key={index} className={`relative flex items-start mb-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                {/* Card */}
+                <div className={`w-[calc(50%-24px)] ${index % 2 === 0 ? 'pr-0' : 'pl-0'}`}>
+                  <div className="portecv-card hover:scale-[1.02] transition-transform duration-300">
+                    <h3 className="text-lg font-bold text-foreground mb-1">{exp.entreprise}</h3>
+                    <p className="text-primary font-semibold text-sm mb-3">{exp.poste}</p>
 
-                {/* Content */}
-                <div className="relative p-6 pt-32">
-                  <span className="inline-block bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                    {exp.domaine}
-                  </span>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{exp.entreprise}</h3>
-                  <p className="text-primary font-semibold text-sm mb-3">{exp.poste}</p>
-
-                  <div className="flex flex-wrap gap-3 mb-4 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {exp.periode}
+                    <div className="flex flex-wrap gap-3 mb-4 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {exp.periode}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        {exp.lieu}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {exp.lieu}
-                    </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-success flex items-center gap-1">
-                      <TrendingUp className="w-4 h-4" />
-                      Réalisations
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.realisations.map((r, i) => (
-                        <span key={i} className="badge-skill text-xs">{r}</span>
-                      ))}
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold text-foreground flex items-center gap-1">
+                        <TrendingUp className="w-4 h-4 text-primary" />
+                        Réalisations
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.realisations.map((r, i) => (
+                          <span key={i} className="badge-skill text-xs">{r}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                {/* Timeline dot */}
+                <div className="absolute left-1/2 top-4 w-3 h-3 bg-primary rounded-full transform -translate-x-1/2 z-10 shadow-md"></div>
+
+                {/* Spacer */}
+                <div className="w-[calc(50%-24px)]"></div>
               </div>
             ))}
           </div>
 
-          {/* Niveaux légende */}
+          {/* Indicateurs */}
           <div className="max-w-3xl mx-auto mt-8">
             <div className="portecv-card">
               <h4 className="text-sm font-semibold text-foreground mb-3">Indicateurs de niveaux</h4>
