@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import PorteCVHeader from '@/components/PorteCVHeader';
 import PorteCVHero from '@/components/PorteCVHero';
 import LanguageSkills from '@/components/LanguageSkills';
-import BehavioralSkills from '@/components/BehavioralSkills';
+import VideoPresentation from '@/components/VideoPresentation';
 import ProfessionalCompetencies from '@/components/ProfessionalCompetencies';
-import TechnicalSkills from '@/components/TechnicalSkills';
 import ProfessionalExperiences from '@/components/ProfessionalExperiences';
 import Documents from '@/components/Documents';
 import ContactCTA from '@/components/ContactCTA';
@@ -44,9 +43,8 @@ const Index = () => {
       <main className="relative z-10">
         <PorteCVHero />
         <LanguageSkills />
-        <BehavioralSkills />
+        <VideoPresentation />
         <ProfessionalCompetencies />
-        <TechnicalSkills />
         <ProfessionalExperiences />
         <Documents />
         <ContactCTA />

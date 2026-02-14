@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, Volume2 } from 'lucide-react';
 
 const LanguageSkills = () => {
   const [selectedLang, setSelectedLang] = useState('FR');
@@ -21,12 +21,12 @@ const LanguageSkills = () => {
           <p className="section-subtitle">Écoutez ma maîtrise des langues étrangères</p>
 
           <div className="max-w-3xl mx-auto">
-            <div className="flex justify-center gap-4 mb-8">
+            <div className="flex justify-center gap-4 mb-8 flex-wrap">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => setSelectedLang(lang.code)}
-                  className={`portecv-card text-center px-8 py-4 cursor-pointer transition-all duration-300 ${
+                  className={`portecv-card text-center px-8 py-4 cursor-pointer transition-all duration-300 relative ${
                     selectedLang === lang.code
                       ? 'border-2 border-primary bg-primary/5 scale-105'
                       : 'hover:border-primary/30'
@@ -35,7 +35,11 @@ const LanguageSkills = () => {
                   <div className="text-3xl mb-2">{lang.flag}</div>
                   <div className="text-2xl font-bold text-foreground mb-1">{lang.code}</div>
                   <div className="text-sm font-medium text-foreground">{lang.langue}</div>
-                  <div className="text-xs text-muted-foreground">{lang.niveau}</div>
+                  <div className="text-xs text-muted-foreground mb-2">{lang.niveau}</div>
+                  <div className="flex items-center justify-center gap-1 text-primary">
+                    <Volume2 className="w-4 h-4" />
+                    <span className="text-xs font-medium">🔊 Écouter</span>
+                  </div>
                 </button>
               ))}
             </div>
