@@ -28,19 +28,20 @@ const ContactCTA = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:moueletgeoff@gmail.com"
-                  className="flex items-center justify-center gap-3 bg-card text-primary px-8 py-4 rounded-xl font-medium hover:bg-card/90 transition-all duration-200 shadow-lg"
+                  className="flex items-center justify-center gap-3 bg-card text-primary px-8 py-4 rounded-full font-semibold hover:bg-card/90 transition-all duration-200 shadow-lg"
                 >
                   <Calendar className="w-5 h-5" />
-                  Réserver un Appel
+                  📞 Réserver un Appel
                 </a>
                 <a
-                  href="https://wa.me/24177657635"
+                  href="https://wa.me/241077657635"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 bg-card/20 text-primary-foreground border border-card/30 px-8 py-4 rounded-xl font-medium hover:bg-card/30 transition-all duration-200"
+                  className="flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-200 shadow-lg text-white"
+                  style={{ backgroundColor: '#25D366' }}
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Message WhatsApp
+                  📱 Message WhatsApp
                 </a>
               </div>
             </div>

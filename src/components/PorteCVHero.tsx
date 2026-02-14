@@ -1,12 +1,6 @@
-import { Download, Mail } from 'lucide-react';
 import supDeComLogo from '@/assets/sup-de-com-logo.png';
 
 const PorteCVHero = () => {
-  const scrollToContact = () => {
-    const el = document.querySelector('#contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="accueil" className="min-h-screen flex items-center justify-center section-spacing relative overflow-hidden">
       {/* Background decorative elements */}
@@ -36,27 +30,12 @@ const PorteCVHero = () => {
             </p>
 
             <p className="text-sm text-success font-medium">
-              🔍 Recherche Job étudiant • Stages • Alternances
+              📌 Recherche Job étudiant • Stages • Alternances
             </p>
 
             <p className="text-base text-muted-foreground max-w-xl">
               Étudiant passionné et déterminé, je transforme mes compétences académiques en solutions concrètes avec une vision claire : contribuer à des projets innovants et développer mon expertise professionnelle.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <button className="btn-primary flex items-center gap-2 icon-hover">
-                <Download className="w-5 h-5" />
-                📌 Télécharger mon CV
-              </button>
-              <button
-                onClick={scrollToContact}
-                className="px-6 py-3 rounded-lg font-medium border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 flex items-center gap-2 icon-hover"
-              >
-                <Mail className="w-5 h-5" />
-                📄 Me contacter
-              </button>
-            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 pt-6">
@@ -77,8 +56,8 @@ const PorteCVHero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-success/20 rounded-full transform rotate-6 scale-105"></div>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary shadow-2xl bg-card">
                 <img
-                  src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop"
-                  alt="RILOGUE BARRE Innivha"
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="RILOGUE BARRE Innivha - Photo professionnelle"
                   className="w-full h-full object-cover"
                 />
               </div>
