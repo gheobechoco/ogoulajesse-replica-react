@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import PorteCVHeader from '@/components/PorteCVHeader';
 import PorteCVHero from '@/components/PorteCVHero';
 import LanguageSkills from '@/components/LanguageSkills';
-import VideoPresentation from '@/components/VideoPresentation';
 import ProfessionalCompetencies from '@/components/ProfessionalCompetencies';
 import ProfessionalExperiences from '@/components/ProfessionalExperiences';
 import Documents from '@/components/Documents';
