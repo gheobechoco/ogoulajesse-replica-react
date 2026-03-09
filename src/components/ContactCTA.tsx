@@ -46,7 +46,7 @@ const ContactCTA = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-white/90 text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-white transition-all duration-200 shadow-lg text-base"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <WhatsAppIcon className="w-5 h-5" />
                   Message WhatsApp
                 </a>
               </div>
