@@ -1,52 +1,36 @@
-import { Headphones, FileText, Play, Pause } from 'lucide-react';
-import { useState } from 'react';
+import { Play } from 'lucide-react';
 
 const VideoPresentation = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <section className="section-spacing">
       <div className="container mx-auto px-4">
         <div className="fade-in-up">
-          <h2 className="section-title">Ma Présentation en Vidéo</h2>
-          <p className="section-subtitle">Découvrez mon parcours et mes ambitions</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Ma présentation en vidéo</h2>
+          <p className="text-muted-foreground mb-8">Découvrez mon parcours et mes ambitions</p>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {/* Audio Player */}
-            <div className="portecv-card">
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-6 h-6 text-primary" />
-                  ) : (
-                    <Play className="w-6 h-6 text-primary ml-0.5" />
-                  )}
-                </button>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">🎧</span>
-                    <h3 className="font-semibold text-foreground">Écouter ma présentation audio</h3>
-                  </div>
-                  {/* Audio progress bar placeholder */}
-                  <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: isPlaying ? '35%' : '0%' }}></div>
-                  </div>
-                </div>
+          <div className="max-w-2xl">
+            {/* Video placeholder with gradient */}
+            <div className="relative rounded-2xl overflow-hidden aspect-video bg-gradient-to-br from-rose-200/60 via-rose-100/40 to-muted/30 flex items-center justify-center cursor-pointer group">
+              {/* Decorative dots */}
+              <div className="absolute top-4 right-4 flex gap-1">
+                <span className="w-2 h-2 rounded-full bg-destructive/40"></span>
+                <span className="w-2 h-2 rounded-full bg-destructive/30"></span>
+                <span className="w-2 h-2 rounded-full bg-destructive/20"></span>
               </div>
-            </div>
+              <div className="absolute bottom-8 left-8 flex gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-destructive/30"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-destructive/20"></span>
+              </div>
 
-            {/* Transcription */}
-            <div className="portecv-card bg-secondary/30">
-              <div className="flex items-center gap-2 mb-4">
-                <FileText className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Transcription</h3>
+              {/* Play button */}
+              <div className="w-16 h-16 bg-white/80 backdrop-blur rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <Play className="w-7 h-7 text-foreground ml-1" />
               </div>
-              <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground text-sm leading-relaxed">
-                « Bonjour, je m'appelle RILOGUE BARRE Innivha. Passionné par le digital et l'innovation, j'ai développé au cours de mon parcours une solide expérience dans la restauration, le service client et la coordination d'événements. Actuellement étudiant en Marketing Digital, je recherche activement des opportunités de stage ou d'alternance pour mettre à profit mes compétences et continuer à apprendre. Mon objectif est de contribuer à des projets innovants tout en développant mon expertise professionnelle. Je suis motivé, dynamique et prêt à relever de nouveaux défis. N'hésitez pas à me contacter pour échanger sur mes expériences et mes ambitions. »
-              </blockquote>
+
+              {/* Label */}
+              <p className="absolute bottom-6 left-0 right-0 text-center text-sm text-muted-foreground">
+                Cliquez pour regarder la vidéo
+              </p>
             </div>
           </div>
         </div>
