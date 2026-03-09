@@ -42,7 +42,6 @@ const Index = () => {
       <main className="relative z-10">
         <PorteCVHero />
         <LanguageSkills />
-        <VideoPresentation />
         <ProfessionalCompetencies />
         <ProfessionalExperiences />
         <Documents />
